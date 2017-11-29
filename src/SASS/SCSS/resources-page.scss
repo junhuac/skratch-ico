@@ -1,0 +1,494 @@
+@import
+"./variables",
+"./abstract";
+
+
+.resources {
+
+    a {
+        color: $secondary-color;
+        transition: color .1s;
+        &:hover {
+            color: $primary-color;
+            text-decoration: underline;
+        }
+    }
+
+    .section--resources-page {
+        padding: 20px 20% 100px;
+
+        @include mediaQuery(1300px) {
+            padding: 20px 15% 100px;
+        }
+
+        @include mediaQuery(1100px) {
+            padding: 20px 70px 60px;
+        }
+
+        @include mediaQuery(900px) {
+            padding: 20px 50px 50px;
+        }
+
+        @include mediaQuery(800px) {
+            padding: 20px 35px 40px;
+        }
+
+        @include mediaQuery(600px) {
+            padding: 20px 25px 30px;
+        }
+    }
+
+    .resources__tabs {
+        width: 85%;
+        font-size: 1.5rem;
+        color: #b3b3b3;
+        text-align: left;
+        font-weight: 300;
+        text-transform: uppercase;
+        @include flex-row(wrap, space-around, center);
+        transition: all .3s;
+        margin: 60px auto;
+        position: relative;
+
+        li {
+            a {
+                color: inherit;
+                padding-top: 9px;
+                display: block;
+                width: 100%;
+                height: 100%;
+                &:hover {
+                    color: inherit;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        @include mediaQuery(900px) {
+            @include flex-column(wrap, space-around, center);
+            width: 100%;
+        }
+
+        @include mediaQuery(700px) {
+            font-size: 1.6rem;
+        }
+    }
+
+    .resources__tab {
+        margin: 20px;
+        height: 40px;
+        text-align: center;
+        cursor: pointer;
+        transition: all .2s;
+        border-top: 3px solid transparent;
+
+
+        &.tab-selected {
+            color: $primary-color;
+            border-top: 3px solid $secondary-color;
+        }
+    }
+
+    .resources__tab:not(.tab-selected):after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 0;
+      margin: 0 auto;
+      background: transparent;
+      transition: width .3s ease, background-color .3s ease;
+      position: relative;
+      right: 0;
+      top: 5px;
+      border-radius: 2%;
+
+    }
+
+    .resources__tab-spinner {
+        width: 53px;
+        height: 50px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -55px;
+        opacity: 0;
+        transition: all .3s;
+
+        &.spinner-shown {
+            opacity: 1;
+        }
+
+        img {
+            width: 75%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    @include mediaQueryMin(800px) {
+        .resources__tab:hover:after {
+          width: 100%;
+          background: transparentize($primary-color, .2);
+        }
+    }
+
+    .resources__carousel-panels {
+        position: relative;
+        min-height: 800px;
+    }
+
+    .resources__carousel-panel {
+        width: 100%;
+    }
+
+    .resources__banner {
+        padding: 80px 100px;
+        background: $gradient;
+        @include flex-row(nowrap, center, center);
+
+        @include mediaQuery(650px) {
+            @include flex-column(nowrap, center, center);
+        }
+
+        .section__header {
+            color: white;
+            margin-bottom: 0;
+            text-align: center;
+            font-size: 3.5rem;
+
+            @include mediaQuery(1200px) {
+                font-size: 3rem;
+            }
+
+            @include mediaQuery(600px) {
+                font-size: 2.1rem;
+            }
+        }
+    }
+
+    .section--resources-page__panel-div {
+        margin: 100px auto 0;
+
+        @include mediaQuery(1100px) {
+            margin-top: 80px;
+        }
+
+        @include mediaQuery(900px) {
+            margin-top: 70px;
+        }
+
+        @include mediaQuery(800px) {
+            margin-top: 50px;
+        }
+
+        // @include mediaQuery(700px) {
+        //     margin-top: 30px;
+        // }
+    }
+
+    .section--resources-page__subheader {
+        font-size: $resources-subheader-size;
+        text-transform: uppercase;
+        font-weight: lighter;
+        margin-bottom: 10px;
+
+        @include mediaQuery(1100px) {
+            font-size: $resources-subheader-size * .9;
+        }
+
+        @include mediaQuery(900px) {
+        }
+
+        @include mediaQuery(800px) {
+            font-size: $resources-subheader-size * .8;
+        }
+    }
+
+    .section--resources-page__big-text {
+        font-size: $resources-big-text-size;
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 20px;
+        margin-top: 60px;
+
+        @include mediaQuery(1100px) {
+            font-size: $resources-big-text-size * .9;
+            margin-top: 50px;
+        }
+
+        @include mediaQuery(900px) {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        @include mediaQuery(800px) {
+            font-size: $resources-big-text-size * .8;
+        }
+    }
+
+    .section--resources-page__text {
+        line-height: $resources-line-height;
+        font-size: $resources-text-size;
+        margin-bottom: 10px;
+
+        @include mediaQuery(1100px) {
+            font-size: $resources-text-size * .9;
+        }
+
+        @include mediaQuery(900px) {
+            font-size: $resources-text-size * .8;
+            line-height: $resources-line-height - .2;
+        }
+
+        @include mediaQuery(700px) {
+            font-size: $resources-text-size * .7;
+        }
+    }
+
+    .participants__list,
+    .economics-of-cryptocurrency__list,
+    .cryptocurrency-lingo__list {
+        padding-left: $resources-left-padding;
+        list-style: none;
+
+        @include mediaQuery(900px) {
+            padding-left: 0;
+        }
+
+        li {
+            line-height: $resources-line-height;
+            font-size: $resources-text-size;
+            margin-bottom: 30px;
+
+            @include mediaQuery(1100px) {
+                font-size: $resources-text-size * .9;
+            }
+
+            @include mediaQuery(900px) {
+                font-size: $resources-text-size * .8;
+                line-height: $resources-line-height - .2;
+            }
+
+            @include mediaQuery(700px) {
+                font-size: $resources-text-size * .7;
+            }
+        }
+
+        span {
+            color: $primary-color;
+            font-weight: 600;
+        }
+    }
+
+    .why-participate__list {
+        margin: 35px auto 40px;
+        list-style: disc;
+        margin-left: 40px;
+
+        @include mediaQuery(1000px) {
+            margin: 30px auto 30px 40px;
+        }
+
+        @include mediaQuery(800px) {
+            margin: 17px auto 20px 25px;
+        }
+
+        li {
+            // padding-left: $resources-left-padding - 20;
+            margin-bottom: 15px;
+            font-size: $resources-text-size;
+
+            @include mediaQuery(1100px) {
+                font-size: $resources-text-size * .9;
+            }
+
+            @include mediaQuery(900px) {
+                font-size: $resources-text-size * .8;
+                padding-left: 0;
+            }
+
+            @include mediaQuery(700px) {
+                font-size: $resources-text-size * .7;
+            }
+        }
+    }
+
+    .how-to-participate__list,
+    .key-properties__list,
+    .components-of-blockchain__list {
+        margin: 30px auto;
+
+        @include mediaQuery(900px) {
+            margin: 20px auto;
+        }
+
+        li {
+            margin-bottom: 35px;
+            p:first-child {
+                color: $primary-color;
+                font-weight: 800;
+                font-size: 2.1rem;
+                padding-left: 0;
+                margin-bottom: 0;
+
+                @include mediaQuery(1100px) {
+                    font-size: 2.1rem * .8;
+                }
+
+                @include mediaQuery(800px) {
+                    font-size: 2.1rem * .6;
+                }
+            }
+
+            p {
+                line-height: $resources-line-height;
+                font-size: $resources-text-size;
+                margin-bottom: 25px;
+                padding-left: $resources-left-padding;
+
+                @include mediaQuery(900px) {
+                    font-size: $resources-text-size * .8;
+                    padding-left: 0;
+                    line-height: $resources-line-height - .2;
+                }
+
+                @include mediaQuery(700px) {
+                    font-size: $resources-text-size * .7;
+                }
+
+
+            }
+        }
+
+        .components-of-blockchain__sub-item {
+            line-height: $resources-line-height;
+            font-size: $resources-text-size;
+            margin-bottom: 25px;
+            padding-left: $resources-left-padding;
+
+            @include mediaQuery(1100px) {
+                font-size: $resources-text-size * .9;
+            }
+
+            @include mediaQuery(900px) {
+                font-size: $resources-text-size * .8;
+                padding-left: 20px;
+                line-height: $resources-line-height - .2;
+            }
+
+            @include mediaQuery(700px) {
+                font-size: $resources-text-size * .7;
+            }
+        }
+    }
+
+    .components-of-blockchain__list-item {
+        &:nth-child(2) {
+            margin-bottom: 0;
+        }
+    }
+
+    .join-text {
+        color: $primary-color;
+        font-weight: 800;
+        font-size: $resources-text-size;
+        padding-left: 0;
+        line-height: 1.5;
+        margin-bottom: 40px;
+        margin-top: 60px;
+
+        @include mediaQuery(1100px) {
+            font-size: $resources-text-size * .9;
+        }
+
+        @include mediaQuery(900px) {
+            font-size: $resources-text-size * .8;
+            padding-left: 0;
+            margin-top: 40px;
+        }
+
+        @include mediaQuery(700px) {
+            font-size: $resources-text-size * .7;
+            margin-top: 30px;
+        }
+    }
+
+    .cryptocurrency,
+    .blockchain,
+    .ethereum-wallet {
+        .section--resources-page__subheader {
+            margin-bottom: 40px;
+        }
+
+        .section--resources-page__text {
+            margin: 20px auto 35px;
+        }
+    }
+
+    .what-crypto-currency-does__list {
+        padding-left: $resources-left-padding;
+
+        @include mediaQuery(900px) {
+            padding-left: 0;
+        }
+
+        li {
+            line-height: $resources-line-height;
+            font-size: $resources-text-size;
+            margin-bottom: 20px;
+
+            @include mediaQuery(1100px) {
+                font-size: $resources-text-size * .9;
+            }
+
+            @include mediaQuery(900px) {
+                font-size: $resources-text-size * .8;
+                margin-left: 20px;
+                line-height: $resources-line-height - .2;
+            }
+
+            @include mediaQuery(700px) {
+                font-size: $resources-text-size * .7;
+            }
+        }
+    }
+
+    .section--resources-page__image-container {
+        width: 98%;
+        margin: 50px auto;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+    .before-disclaimer {
+        padding-bottom: 60px;
+        border-bottom: 2px solid $primary-color;
+
+        @include mediaQuery(800px) {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+
+    }
+
+    .resources__disclaimer {
+        font-size: 1.4rem;
+        line-height: 1.4;
+        color: $secondary-color;
+
+        a {
+            color: $primary-color;
+        }
+
+        @include mediaQuery(800px) {
+            font-size: 1.2rem;
+        }
+    }
+
+
+}
+

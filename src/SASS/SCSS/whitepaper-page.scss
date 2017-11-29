@@ -1,0 +1,327 @@
+@import
+"./variables",
+"./abstract";
+
+$mobile-breakpoint: 900px;
+
+.whitepaper {
+    min-height: 500px;
+
+//     .whitepaper-form {
+//         position: fixed;
+//         bottom: 0;
+//         left: 0;
+//         height: 100px;
+//         width: 100%;
+//         background: transparentize(#f3f3f3, .05);
+//         box-shadow: 0 -3px 4px 0 rgba(128, 128, 128, 0.2);
+//         padding: 25px 50px;
+//         @include flex-row(wrap, center, center);
+//         transition: all .3s;
+
+//         @include mediaQuery(1200px) {
+//             padding: 25px 20px;
+//         }
+
+//         @include mediaQuery(1000px) {
+//             padding: 25px 15px;
+//         }
+
+//         @include mediaQuery($mobile-breakpoint) {
+//             height: 175px;
+//             @include flex-column(nowrap, center, center);
+//             z-index: 100000000;
+//         }
+
+//         &.mobile-hidden {
+//                     bottom: -180px;
+
+//             @include mediaQueryMin($mobile-breakpoint + 1) {
+//                 bottom: 0;
+//             }
+//         }
+
+//         .whitepaper-form__choose-caption {
+//             text-align: center;
+//             margin-right: 15px;
+
+//             @include mediaQuery(1200px) {
+//                 margin-right: 10px;
+//             }
+
+//             @include mediaQuery(1000px) {
+//                 font-size: 1.1rem;
+//             }
+
+//             @include mediaQuery(600px) {
+//                 display: none;
+//             }
+//         }
+
+//         .whitepaper-form__payment-button {
+//             padding: 10px;
+//             width: 190px;
+//             border: 3px solid $primary-color;
+//             background: none;
+//             color: $primary-color;
+//             margin: 5px 10px;
+//             transition: .2s;
+//             cursor: pointer;
+//             text-align: center;
+//             font-weight: 600;
+//             font-family: "Roboto", Arial, sans-serif;
+
+//             @include mediaQuery(1200px) {
+//                 padding: 10px 1px;
+//             }
+
+//             @include mediaQuery(1100px) {
+//                 width: 165px;
+//             }
+
+//             @include mediaQuery(1000px) {
+//                 margin: 5px;
+//                 width: 160px;
+//             }
+
+//             @include mediaQuery(800px) {
+//                 padding: 10px 0;
+//             }
+
+//             @include mediaQuery(400px) {
+//                 width: 145px;
+//                 font-size: .8rem;
+//             }
+
+//             &.button-selected {
+//                 background: $primary-color;
+//                 color: white;
+//                 pointer-events: none;
+//             }
+
+//             &:hover {
+//                 background: $primary-color;
+//                 color: white;
+//             }
+//         }
+
+//         .whitepaper-form__payment-buttons {
+//             @include flex-row(wrap, center, center);
+
+//             @include mediaQuery($mobile-breakpoint) {
+//                 justify-content: space-around;
+//                 width: 100%;
+//             }
+//         }
+
+//         .whitepaper-form__inputs {
+//             width: 0;
+//             overflow: hidden;
+//             transition: width .3s;
+//             height: 100%;
+//             transition: all .5s;
+//             margin-left: 50px;
+//             position: relative;
+//             max-width: 600px;
+
+//             @include mediaQuery(1200px) {
+//                 margin-left: 20px;
+//             }
+
+//             @include mediaQuery(1000px) {
+//                 margin-left: 10px;
+//             }
+
+//             &.inputs-expanded {
+//                 width: 400px;
+
+//                 @include mediaQuery(1200px) {
+//                     width: 350px;
+//                 }
+
+//                 @include mediaQuery(1000px) {
+//                     width: 330px;
+//                 }
+
+//                 @include mediaQuery($mobile-breakpoint) {
+//                     margin-top: 10px;
+//                     width: 100%;
+//                     margin-left: 0;
+//                     height: 50px;
+//                 }
+//             }
+//         }
+
+//         .whitepaper-form__input {
+//             position: absolute;
+//             left: 0;
+//             top: 0;
+//             width: 100%;
+//             height: 100%;
+//             opacity: 0;
+//             transition: all .3s;
+//             z-index: -5;
+//             transition: z-index 0.1s .5s step-end, opacity .3s .1s ease;
+//             @include flex-row(nowrap, center, center);
+//             padding: 5px 0;
+
+//             &.input-shown {
+//                 opacity: 1;
+//                 z-index: 10;
+//                 transition: z-index 0.05s step-end, opacity .3s .05s ease;
+//             }
+//         }
+
+//         .whitepaper-form__email-input {
+//             font-size: 1.1rem;
+//             height: 100%;
+//             margin: 0 20px;
+//             background: none;
+//             border: none;
+//             border-bottom: 4px solid $primary-color;
+//             width: 78%;
+//             color: $primary-color;
+
+//             @include mediaQuery(1100px) {
+//                 margin: 0 10px;
+//             }
+
+//             @include mediaQueryMin($mobile-breakpoint) {
+//                 margin: 0 10px;
+//             }
+//         }
+
+//         .whitepaper-form__email-submit {
+//             width: 100px;
+//             height: 100%;
+//             border: none;
+//             background: $secondary-color;
+//             color: white;
+//             cursor: pointer;
+//             transition: all .2s;
+
+//             @include mediaQuery(1100px) {
+//                 width: 80px;
+//             }
+
+//             @include mediaQuery($mobile-breakpoint) {
+//                 height: 95%;
+//             }
+
+//             &:hover {
+//                 background: $primary-color;
+//             }
+
+//             &.email-invalid {
+//                 background: lightgray;
+//                 color: $primary-color;
+//                 cursor: no-drop;
+//                 pointer-events: none;
+//             }
+//         }
+
+//         .form-status {
+//             position: absolute;
+//             width: 25px;
+//             height: 25px;
+//             right: 27%;
+//             margin-left: -15px;
+//             top: 48%;
+//             transform: translateY(-50%);
+//             z-index: 10000;
+
+//             @include mediaQuery(450px) {
+//                 width: 22px;
+//                 height: 22px;
+//             }
+
+//             img {
+//                 object-fit: cover;
+//                 width: 100%;
+//                 padding: 1px 1px 1px 3px;
+//                 background: rgba(243, 243, 243, 1);
+
+//                 &.status-shown {
+//                     display: block;
+//                 }
+
+//                 &.status-hidden {
+//                     display: none;
+//                 }
+//             }
+//         }
+
+//         .whitepaper-form-mobile-toggle {
+//             position: absolute;
+//             width: 75px;
+//             height: 80px;
+//             padding: 13px;
+//             top: -45%;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             display: none;
+//             background: rgba(243, 243, 243, 1);
+//             border-top: 3px solid $primary-color;
+
+//             @include mediaQuery($mobile-breakpoint) {
+//                 @include flex-row(nowrap, center, center);
+//             }
+
+//             img {
+//                 width: 65%;
+//             }
+//         }
+//     }
+// }
+
+// .SimplePDF {
+//   // width: 900px; /* width of pdf document box should be != 0 */
+//   height: 800px; /* height of pdf document box should be != 0 */
+//   margin: 50px auto;
+//   max-width: 970px;
+//   box-shadow: 0 0 9px 0 rgba(0, 0, 0,.4);
+
+//     @include mediaQuery(900px) {
+//         height: 500px;
+//     }
+// }
+
+// .whitepaper-pdf-container {
+//     width: 100%;
+//     margin: 0 auto;
+//     padding: 40px 80px;
+//     background: transparentize(lightgray, .8);
+
+//     @include mediaQuery(900px) {
+//         padding: 40px 0;
+//         border-radius: 0;
+//     }
+}
+
+.pdf-download-form {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.pdf-download-button {
+    width: 100%;
+    padding: 15px 20px;
+    background: $primary-color;
+    color: white;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 3px;
+    transition: .2s;
+    font-weight: lighter;
+    cursor: pointer;
+
+    &:hover {
+        background: $secondary-color;
+    }
+
+    @include mediaQuery(800px) {
+        font-size: 1.3rem;
+    }
+
+}

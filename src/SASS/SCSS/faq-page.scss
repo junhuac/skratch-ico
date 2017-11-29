@@ -1,0 +1,128 @@
+@import
+"./variables",
+"./abstract";
+
+
+.faq-page {
+	.section--faq-page {
+		padding: 20px 20% 0;
+
+		@include mediaQuery(1100px) {
+		    font-size: $resources-big-text-size * .9;
+		}
+	}
+
+	ol {
+		margin-top: 0;
+
+		@include mediaQuery(800px) {
+		    		padding-left: 30px;
+		}
+	}
+
+	.section--faq-page__big-text {
+	    font-size: $resources-big-text-size;
+	    font-weight: 600;
+	    color: $primary-color;
+	    margin-bottom: 20px;
+	    margin-top: 40px;
+
+	    @include mediaQuery(1100px) {
+	        font-size: $resources-big-text-size * .9;
+	        margin-top: 50px;
+	    }
+
+	    @include mediaQuery(900px) {
+	        margin-top: 30px;
+	        margin-bottom: 10px;
+	    }
+
+	    @include mediaQuery(800px) {
+	        font-size: $resources-big-text-size * .8;
+	    }
+	}
+
+	.faq__banner {
+	    padding: 80px 100px;
+	    background: $gradient;
+	    @include flex-row(nowrap, center, center);
+
+	    @include mediaQuery(650px) {
+	        @include flex-column(nowrap, center, center);
+	    }
+
+	    .section__header {
+	        color: white;
+	        margin-bottom: 0;
+	        text-align: center;
+
+	        @include mediaQuery(600px) {
+	            font-size: 2.3rem;
+	        }
+	    }
+	}
+
+	.section--faq-page__big-text,
+	.section--faq-page__list {
+	    font-size: $resources-big-text-size;
+	    font-weight: 600;
+	    color: $primary-color;
+	    margin-bottom: 20px;
+	    margin-top: 40px;
+
+	    @include mediaQuery(1100px) {
+	        font-size: $resources-big-text-size * .9;
+	        margin-top: 30px;
+	    }
+
+	    @include mediaQuery(900px) {
+	        margin-top: 30px;
+	        margin-bottom: 10px;
+	    }
+
+	    @include mediaQuery(800px) {
+	        font-size: $resources-big-text-size * .8;
+	        margin-top: 10px;
+	    }
+	}
+
+	.section--faq-page__text {
+	    line-height: $resources-line-height;
+	    font-size: $resources-text-size;
+	    margin-bottom: 10px;
+	    font-weight: lighter;
+	    color: black;
+	    font-weight: lighter;
+
+	    @include mediaQuery(1100px) {
+	        font-size: $resources-text-size * .9;
+	    }
+
+	    @include mediaQuery(900px) {
+	        font-size: $resources-text-size * .8;
+	        line-height: $resources-line-height - .2;
+	    }
+
+	    @include mediaQuery(700px) {
+	        font-size: $resources-text-size * .7;
+	    }
+	}
+
+	.section--faq-page__panel-div {
+	    margin: 70px auto 0;
+
+	    @include mediaQuery(1100px) {
+	        margin-top: 30px;
+	        margin-bottom: 50px;
+	    }
+
+	    @include mediaQuery(900px) {
+	        margin-top: 30px;
+	    }
+
+	    @include mediaQuery(800px) {
+	        margin-top: 10px;
+	    }
+
+	}
+}

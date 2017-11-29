@@ -1,0 +1,149 @@
+@import "./variables", "./abstract";
+
+.section--price-page {
+	color: $primary-color;
+	font-size: 2rem;
+	padding: 50px 50px 20px;
+
+	@include mediaQuery(800px) {
+		margin: 20px auto 0;
+	}
+
+	@include mediaQuery(600px) {
+		padding: 20px 30px 0;
+	}
+
+	.section--price-page__loader {
+		@include flex-column(nowrap, center, center);
+		width: 100%;
+
+		img {
+			width: 50px;
+		}
+
+		.section--price-page__loader-header {
+			text-align: center;
+			margin: 20px auto;
+			font-size: 1.5rem;
+		}
+
+		&.loader-hidden {
+			display: none;
+		}
+	}
+
+	.section--price-page__prices {
+		display: none;
+
+		&.prices-shown {
+			display: block;
+		}
+	}
+
+	.section--price-page__prices-items {
+		width: 100%;
+		@include flex-row(wrap, center, center);
+		margin: 40px auto;
+
+		@include mediaQuery(1000px) {
+			margin: 20px auto;
+		}
+
+		@include mediaQuery(600px) {
+			margin: 10px auto;
+		}
+
+		.section--price-page__prices-item {
+			width: 220px;
+			height: 150px;
+			margin: 20px;
+			@include flex-column(nowrap, center, center);
+			color: white;
+			background: transparentize($primary-color, .3);
+			padding: 10px;
+			position: relative;
+			border-radius: 5px;
+
+			h3 {
+				font-size: 1.5rem;
+				margin-bottom: 10px;
+			}
+
+			p {
+				font-size: 1.35rem;
+				letter-spacing: .8px;
+			}
+
+			.section--price-page__prices-arrow {
+				position: absolute;
+				right: 15px;
+				bottom: 15px;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				background: white;
+				@include flex-column(nowrap, center, center);
+
+				img {
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	//graph styling
+
+	.section--price-page__graph {
+		margin: 100px auto 0;
+
+		@include mediaQuery(800px) {
+			display: none;
+		}
+	}
+
+	.section--price-page__graph-header {
+		text-align: center;
+		margin: 20px auto;
+	}
+	.recharts-cartesian-axis-ticks {
+		// font-size: .9rem;
+	}
+
+	.recharts-wrapper {
+		margin: 20px auto;
+
+		.recharts-xAxis .recharts-text.recharts-cartesian-axis-tick-value {
+			fill: $primary-color;
+			font-size: .8rem;
+		}
+
+		.recharts-yAxis .recharts-text.recharts-cartesian-axis-tick-value {
+			fill: $primary-color;
+			font-weight: bold;
+			font-size: 1rem;
+			transform: translateX(-10px);
+		}
+
+		.recharts-default-legend {
+			transform: translateY(20px);
+		}
+
+		.recharts-xAxis .recharts-text.recharts-cartesian-axis-tick-value {
+			transform: translateY(20px);
+			color: $primary-color;
+			letter-spacing: -.3px;
+		}
+
+		.label {
+			font-size: 1.1rem;
+			font-weight: 600;
+			color: $secondary-color;
+		}
+
+		.payload {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: $primary-color;
+		}
+	}
+}
