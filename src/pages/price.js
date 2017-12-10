@@ -107,7 +107,7 @@ export default class Price extends React.Component {
                 this.setState({
                   loadingDone: true
                 });
-              }, 1500);
+              }, 1000);
             })
             .catch(console.error);
         })
@@ -121,6 +121,11 @@ export default class Price extends React.Component {
     let date = new Date(input).getDate();
     let month = new Date(input).getMonth() + 1;
     let year = new Date(input).getFullYear();
+
+    if (minutes < 10) {
+      minutes = `0${minutes}`;
+    }
+
     return `${month}/${date}/${year}, ${hours}:${minutes}`;
   }
 

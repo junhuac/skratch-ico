@@ -3,7 +3,6 @@ import EasyTransition from 'react-easy-transition';
 import {Helmet} from "react-helmet";
 import {pageTransition} from "../layouts/";
 import "../SASS/SCSS/faq-page.scss";
-import WhitepaperForm from "../components/WhitepaperForm";
 
 const FAQ = props => {
     let location = (props.location ? props.location : "");
@@ -145,7 +144,6 @@ const FAQ = props => {
                         </li>
                     </ol>
                 </section>
-                <WhitepaperForm />
             </div>
         </EasyTransition>
     );

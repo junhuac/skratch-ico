@@ -11,7 +11,6 @@ import HomeTechnical from "../components/Home-Technical";
 import HomeTimeline from "../components/Home-Timeline";
 import HomePress from "../components/Home-Press";
 import FAQ from "../components/FAQ-Banner";
-import WhitepaperForm from "../components/WhitepaperForm";
 import { Helmet } from "react-helmet";
 
 const IndexPage = props => {
@@ -89,7 +88,6 @@ const IndexPage = props => {
         <HomeTimeline data={sectionTimelineData} />
         {/*<HomePress data={sectionPressData} />*/}
         <FAQ data={sectionFAQData} />
-        <WhitepaperForm />
       </div>
     </EasyTransition>
   );
@@ -97,7 +95,7 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-export const query = graphql`
+export const IndexPageQuery = graphql`
   query homeContentfulQuery {
     contentfulBanner {
       bannerHeader

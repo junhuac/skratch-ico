@@ -6,6 +6,7 @@ import "../SASS/SCSS/normalize.scss";
 import "../SASS/SCSS/base.scss";
 import HeaderNav from "../components/HeaderNav";
 import Footer from "../components/Footer";
+import WhitepaperForm from "../components/WhitepaperForm";
 import $ from "jquery";
 
 export const pageTransition = "opacity 0.3s";
@@ -65,6 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {children()}
       </div>
       <Footer data={data.allContentfulFooter.edges[0].node} images={data.allContentfulAsset.edges} />
+      <WhitepaperForm />
     </div>
   );
 };

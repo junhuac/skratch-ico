@@ -6,7 +6,6 @@ import "../SASS/SCSS/whitepaper-page.scss";
 import spdf from "simple-react-pdf";
 import ReactDOM from "react-dom";
 import WhitepaperHTML from "../components/WhitepaperHTML";
-import WhitepaperForm from "../components/WhitepaperForm";
 
 
 const WhitePaper = props => {
@@ -21,7 +20,7 @@ const WhitePaper = props => {
     return (
         <EasyTransition
             path={location.pathname}
-            initialStyle={{opacity: .4}}
+            initialStyle={{opacity: 0}}
             transition={pageTransition}
             finalStyle={{opacity: 1}}
         >
@@ -49,7 +48,7 @@ const WhitePaper = props => {
 
             <div className="main-content whitepaper">
                 <WhitepaperHTML />
-                <WhitepaperForm />
+{/*                <WhitepaperForm />*/}
             </div>
         </EasyTransition>
     );

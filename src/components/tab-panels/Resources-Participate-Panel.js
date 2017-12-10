@@ -1,6 +1,5 @@
 import React from "react";
 import renderHTML from "react-render-html";
-import WhitepaperForm from "../WhitepaperForm";
 
 const ResourcesParticipatePanel = props => {
   //logic
@@ -88,7 +87,6 @@ const ResourcesParticipatePanel = props => {
           </p>
         </div>
       </section>
-      <WhitepaperForm />
     </div>
   );
 };

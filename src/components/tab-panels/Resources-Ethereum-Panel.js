@@ -1,6 +1,5 @@
 import React from "react";
 import renderHTML from "react-render-html";
-import WhitepaperForm from "../WhitepaperForm";
 
 const ResourcesEthereumPanel = props => {
     //logic
@@ -73,7 +72,6 @@ const ResourcesEthereumPanel = props => {
                     </p>
                 </div>
             </section>
-            <WhitepaperForm />
         </div>
     );
 };

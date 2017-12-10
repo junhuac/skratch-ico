@@ -29,28 +29,24 @@
     @include flex-column(nowrap, center, center);
 
     .footer__countdown-container {
-        width: 52%;
+        width: 65%;
         padding: 30px 50px;
         border-bottom: 4px solid $secondary-color;
         text-align: center;
-        min-width: 470px;
+        min-width: 570px;
 
-        @include mediaQuery(1200px) {
-            min-width: 0;
-            width: 60%;
-        }
+        // @include mediaQuery(1200px) {
+        //     width: 60%;
+        // }
 
         @include mediaQuery(1000px) {
-            width: 70%;
+            width: 75%;
             padding: 30px 0;
-            min-width: 450px;
+
         }
 
         @include mediaQuery(700px) {
-            width: 100%;
-        }
-
-        @include mediaQuery(550px) {
+            width: 95%;
             min-width: 0;
         }
 

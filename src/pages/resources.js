@@ -8,7 +8,6 @@ import {pageTransition} from "../layouts/";
 import ParticipatePanel from "../components/tab-panels/Resources-Participate-Panel";
 import ResourcesTabs from "../components/Resources-Tabs";
 import Link from "gatsby-link";
-import WhitepaperForm from "../components/WhitepaperForm";
 
 class Resources extends React.Component {
   static propTypes = {
