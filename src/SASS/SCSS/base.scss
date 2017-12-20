@@ -1,6 +1,4 @@
-@import
-"./variables",
-"./abstract";
+@import "./variables", "./abstract";
 
 $mobile-breakpoint: 900px;
 
@@ -37,8 +35,14 @@ a {
     color: inherit;
 }
 
-
-p, h1, h2, h3, h4,, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+,
+h5,
+h6 {
     margin: 0;
     padding: 0;
 }
@@ -48,8 +52,9 @@ button {
     height: 100%;
     cursor: pointer;
     text-align: center;
+    font-family: "din-2014", Arial, sans-serif;
+    font-weight: 600;
 }
-
 
 .main-content {
     padding: ($header-height) 0 0;
@@ -63,15 +68,13 @@ button {
     width: 60px;
 }
 
-
 .email-form-container {
     width: 100%;
 }
 
-
 .email-form {
     width: 75%;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     min-width: 750px;
     @include flex-column(nowrap, center, center);
     transition: all .3s .1s;
@@ -82,7 +85,6 @@ button {
     background: transparentize(white, 0);
     position: relative;
     max-width: 900px;
-
 
     @include mediaQuery(1400px) {
         width: 75%;
@@ -165,7 +167,8 @@ button {
     .first-name-input,
     .last-name-input,
     .dob-input,
-    .amount-input {
+    .amount-input,
+    .form-dropdpwn {
         color: $primary-color;
         width: 80%;
         padding: 10px 15px 10px 8px;
@@ -241,12 +244,38 @@ button {
         }
     }
 
+    .form-dropdown {
+        margin: 5px auto;
+        background: transparentize($primary-color, .3);
+        border: 3px solid #6d03cc;
+        height: auto;
+        min-height: 40px;
+        color: white;
+        font-weight: 400;
+        font-size: 1rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 0;
+        padding: 5px 10px;
+        background-image: url("//images.contentful.com/j5zy0n17n2ql/5UhJZs5lhSQIsQgye4CiGW/6bed931d7879a4bbdc472c76855a0e05/down-arrow.svg");
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-position: 94% 50%;
+        cursor: pointer;
+        width: 80%;
+        position: relative;
+        z-index: 10;
+        float: none;
 
+        @include mediaQuery(650px) {
+            width: 100%;
+        }
+    }
 
     .email-button {
         color: white;
         border: none;
-        padding:  11px 20px;
+        padding: 11px 20px;
         min-width: 130px;
         background: $primary-color;
         width: 50%;
@@ -300,18 +329,17 @@ button {
             }
         }
     }
-
 }
 
 input[type="date"]:before {
     content: attr(placeholder) !important;
     color: $primary-color;
     margin-right: 0.5em;
-  }
-  input[type="date"]:focus:before,
-  input[type="date"]:valid:before {
+}
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
     content: "";
-  }
+}
 
 .email-form-container__modal {
     width: 100%;
@@ -342,9 +370,10 @@ input[type="date"]:before {
     }
 
     .email-form-container__modal-header {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         color: $secondary-color;
         margin-bottom: 40px;
+        width: 95%;
 
         @include mediaQuery(550px) {
             font-size: 1.5rem;
@@ -354,19 +383,17 @@ input[type="date"]:before {
 
     @include mediaQuery(650px) {
         justify-content: flex-start;
-
     }
 }
 
-
 .email-form-container__modal-close {
     position: absolute;
-    right: 4%;
-    top: 25px;
+    right: 3%;
+    top: 20px;
     cursor: pointer;
-    background: #6d03cc;
+    background: transparentize($primary-color, .25);
     padding: 9px;
-    border-radius: 4px;
+    border-radius: 50%;
     width: 31px;
     height: 31px;
     display: flex;
@@ -376,12 +403,10 @@ input[type="date"]:before {
     }
 
     @include mediaQuery(650px) {
-        width: 31px;
+        width: 29px;
+        height: 29px;
         top: 17px;
-        cursor: pointer;
-        background: $primary-color;
         padding: 8px;
-        border-radius: 4px;
     }
 }
 
@@ -413,6 +438,7 @@ input[type="date"]:before {
 
     @include mediaQuery(450px) {
         margin-bottom: 20px;
+        padding: 11px 15px;
     }
 }
 
@@ -443,7 +469,7 @@ input[type="date"]:before {
 .section {
     width: 100%;
 
-    &:not(.section--home-banner):not(.section--press):not(.section--timeline):not(.section--resources-page) {
+    &:not(.section--home-banner):not(.section--press):not(.section--timeline):not(.section--resources-page):not(.section--price-page) {
         // padding: 80px 100px;
 
         @include mediaQuery(1100px) {
@@ -462,7 +488,6 @@ input[type="date"]:before {
             padding: 50px 15px;
         }
     }
-
 }
 
 .section__header {
@@ -546,30 +571,28 @@ input[type="date"]:before {
         width: 50px;
 
         @include mediaQuery(800px) {
-            width: 40px
+            width: 40px;
         }
     }
 }
 
-
 .fade-enter {
-  transform: scale(.95);
-  opacity: 0.4;
-  transform-origin: top;
+    transform: scale(.95);
+    opacity: 0.4;
+    transform-origin: top;
 }
 .fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity .4s, transform .3s;
-  transform: scale(1);
+    opacity: 1;
+    transition: opacity .4s, transform .3s;
+    transform: scale(1);
 }
 
 .fade-leave {
-  opacity: 1;
+    opacity: 1;
 }
 .fade-leave.fade-leave-active {
-  opacity: 0.3;
+    opacity: 0.3;
 }
-
 
 .whitepaper-form {
     position: fixed;
@@ -599,7 +622,7 @@ input[type="date"]:before {
     }
 
     &.mobile-hidden {
-                bottom: -180px;
+        bottom: -180px;
 
         @include mediaQueryMin($mobile-breakpoint + 1) {
             bottom: 0;
@@ -689,30 +712,33 @@ input[type="date"]:before {
     .whitepaper-form__inputs {
         width: 0;
         overflow: hidden;
-        transition: width .3s;
+        transition: width .3s, margin .3s;
         height: 100%;
         transition: all .5s;
-        margin-left: 50px;
+        margin-left: 0;
         position: relative;
         max-width: 600px;
 
-        @include mediaQuery(1200px) {
-            margin-left: 20px;
-        }
+        // @include mediaQuery(1200px) {
+        //     margin-left: 20px;
+        // }
 
-        @include mediaQuery(1000px) {
-            margin-left: 10px;
-        }
+        // @include mediaQuery(1000px) {
+        //     margin-left: 10px;
+        // }
 
         &.inputs-expanded {
             width: 400px;
+            margin-left: 50px;
 
             @include mediaQuery(1200px) {
                 width: 350px;
+                margin-left: 20px;
             }
 
             @include mediaQuery(1000px) {
                 width: 330px;
+                margin-left: 10px;
             }
 
             @include mediaQuery($mobile-breakpoint) {
@@ -863,7 +889,7 @@ input[type="date"]:before {
         width: 65px;
         left: 50%;
         transform: translateX(-50%);
-        text-align: center
+        text-align: center;
     }
 }
 
@@ -871,7 +897,7 @@ input[type="date"]:before {
 .section--investor-redirect,
 .section--e-sign {
     padding: 150px 50px;
-    background: linear-gradient(to top right, rgba(109,3,204,.6), #6d03cc);
+    background: linear-gradient(to top right, rgba(109, 3, 204, .6), #6d03cc);
 
     @include mediaQuery(900px) {
         padding: 100px 40px;
@@ -903,7 +929,6 @@ input[type="date"]:before {
     }
 }
 
-
 .section--e-sign {
     padding: 200px 50px;
     color: white;
@@ -914,16 +939,92 @@ input[type="date"]:before {
     }
 }
 
+.footer__loading-panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#fff, rgb(245, 232, 240));
+    @include flex-row(nowrap, center, center);
+    z-index: 1000000000;
+    transition: z-index 0.7s step-end 2.5s, opacity .5s ease 2.5s, transform .5s ease 2.5s;
+    font-family: Arial, sans-serif;
+    // font-weight: lighter;
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: transparentize($secondary-color, .3);
+    &.loading-done {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    &.loading-gone {
+        display: none;
+    }
+
+    .footer__loading-panel-text {
+        font-size: 4.5rem;
+        margin-bottom: 50px;
+    }
+
+    .loading-letter {
+        transform: scale(0);
+        opacity: 0;
+        display: inline-block;
+    }
+
+    .second-letter {
+        color: $primary-color;
+    }
+
+    .first-letter {
+        transition: all .4s .2s;
+    }
+
+    .second-letter {
+        transition: all .4s .3s;
+    }
+
+    .third-letter {
+        transition: all .4s .4s;
+    }
+
+    .fourth-letter {
+        transition: all .4s .5s;
+    }
+
+    .fifth-letter {
+        transition: all .4s .6s;
+    }
+
+    .sixth-letter {
+        transition: all .4s .7s;
+    }
+
+    .seventh-letter {
+        transition: all .4s .8s;
+    }
+
+    .footer__loading-panel-text.loading {
+        .loading-letter {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 }
-::-moz-placeholder { /* Firefox 19+ */
-  color: transparentize($secondary-color, .3);
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: transparentize($secondary-color, .3);
 }
-:-ms-input-placeholder { /* IE 10+ */
-  color: transparentize($secondary-color, .3);
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: transparentize($secondary-color, .3);
 }
-:-moz-placeholder { /* Firefox 18- */
-  color: transparentize($secondary-color, .3);
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: transparentize($secondary-color, .3);
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: transparentize($secondary-color, .3);
 }
