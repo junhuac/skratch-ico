@@ -1,6 +1,6 @@
 export default function startTimer(parent) {
 
-    var end = new Date('03/15/2018 11:59 PM');
+    var end = new Date('03/20/2018 11:59 PM');
 
     var _second = 1000;
     var _minute = _second * 60;

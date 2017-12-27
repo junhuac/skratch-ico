@@ -1,2 +1,0 @@
-webpackJsonp([0x6e30917de6c6],{598:function(e,t){e.exports={data:{contentfulWhitepaperPage:{whitepaperPdf:{file:{url:"//assets.contentful.com/j5zy0n17n2ql/jBg7sxSPlYCqSmwu8IeSU/1f5e23ee343168c8d61a6648c6789e1a/skratch-whitepaper.pdf"}}}},pathContext:{}}}});
-//# sourceMappingURL=path---white-paper-05661fd13eb853d4bb53.js.map

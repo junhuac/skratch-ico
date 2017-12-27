@@ -11,7 +11,7 @@ import WhitepaperHTML from "../components/WhitepaperHTML";
 const WhitePaper = props => {
     let location = props.location ? props.location : "";
 
-    let whitepaperURL = props.data.contentfulWhitepaperPage.whitepaperPdf.file.url;
+    // let whitepaperURL = props.data.contentfulWhitepaperPage.whitepaperPdf.file.url;
 
     let metaSite = 'https://skratch-ico.surge.sh/white-paper';
     let metaTitle = "Cryptocurrency for Music and Media | Skratch Whitepaper";
@@ -59,14 +59,14 @@ export default WhitePaper
 
 //query
 
-export const query = graphql`
-  query whitepaperContentfulQuery {
-    contentfulWhitepaperPage {
-        whitepaperPdf {
-          file {
-            url
-          }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query whitepaperContentfulQuery {
+//     contentfulWhitepaperPage {
+//         whitepaperPdf {
+//           file {
+//             url
+//           }
+//       }
+//     }
+//   }
+// `

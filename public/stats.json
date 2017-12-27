@@ -21,8 +21,8 @@
       "component---src-pages-wallet-js-f29b4fe269e19b3e873d.js.map"
     ],
     "path---": [
-      "path----10ca7a442dec2c3d32de.js",
-      "path----10ca7a442dec2c3d32de.js.map"
+      "path----00ad41e3b175b4c8d418.js",
+      "path----00ad41e3b175b4c8d418.js.map"
     ],
     "component---src-pages-resources-js": [
       "component---src-pages-resources-js-8e23c5acc3043d531834.js",
@@ -49,16 +49,16 @@
       "path---cryptocurrency-7d9ba021ae444428dc51.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-92547e04279891673e4c.js",
-      "component---src-layouts-index-js-92547e04279891673e4c.js.map"
+      "component---src-layouts-index-js-906d96a9746828721624.js",
+      "component---src-layouts-index-js-906d96a9746828721624.js.map"
     ],
     "component---src-pages-price-js": [
       "component---src-pages-price-js-2cf5065e66ec00744dcd.js",
       "component---src-pages-price-js-2cf5065e66ec00744dcd.js.map"
     ],
     "path---white-paper": [
-      "path---white-paper-05661fd13eb853d4bb53.js",
-      "path---white-paper-05661fd13eb853d4bb53.js.map"
+      "path---white-paper-a0e39f21c11f6a62c5ab.js",
+      "path---white-paper-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-cryptocurrency-js": [
       "component---src-pages-cryptocurrency-js-0f7cc9551ad36311ecd9.js",
@@ -73,16 +73,16 @@
       "component---src-pages-team-js-12f55881f8629e15c082.js.map"
     ],
     "path---index": [
-      "path---index-4c9442bcd5e244785e42.js",
-      "path---index-4c9442bcd5e244785e42.js.map"
+      "path---index-81afc83b7f8a227b8f33.js",
+      "path---index-81afc83b7f8a227b8f33.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-b3e8f93e8f0ab70f7d14.js",
       "component---src-pages-404-js-b3e8f93e8f0ab70f7d14.js.map"
     ],
     "commons": [
-      "commons-6e1d99ec5a7366c6bd52.js",
-      "commons-6e1d99ec5a7366c6bd52.js.map"
+      "commons-970ec000825635c63a66.js",
+      "commons-970ec000825635c63a66.js.map"
     ],
     "path---resources": [
       "path---resources-6281fa0a6e903cf90086.js",
@@ -113,8 +113,8 @@
       "path---wallet-9a82c7158a49f3e53e46.js.map"
     ],
     "component---src-pages-white-paper-js": [
-      "component---src-pages-white-paper-js-b912a591c40b1cf9b613.js",
-      "component---src-pages-white-paper-js-b912a591c40b1cf9b613.js.map"
+      "component---src-pages-white-paper-js-c5f6c90c222c7f3d7f4a.js",
+      "component---src-pages-white-paper-js-c5f6c90c222c7f3d7f4a.js.map"
     ]
   }
 }
